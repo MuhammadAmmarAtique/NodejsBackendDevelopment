@@ -1,7 +1,19 @@
-console.log("gg");
+const express = require('express')
+const app = express()
+const port = 3000
 
-const a =2 ;
-const b= 12;
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
-console.log(a+b);
+app.get('/About',(req,res)=>{
+  res.send("<h1> Welcome to your website </h1>")
+})
 
+app.get('/Contact-us',(req,res)=>{
+res.send("<p>Contact us at number 92374098 </p>")
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
