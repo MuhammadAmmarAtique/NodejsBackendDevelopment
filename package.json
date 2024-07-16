@@ -1,0 +1,17 @@
+{
+  "name": "deployingbackend",
+  "version": "1.0.0",
+  "description": "A basic app to deploy backend code",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Muhammad Ammar Atique",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
