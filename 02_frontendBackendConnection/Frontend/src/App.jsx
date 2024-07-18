@@ -1,44 +1,39 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import "./App.css";
+import axios from "axios";
 
 function App() {
-  const [jokes, setjokes] = useState([])
+  const [jokes, setjokes] = useState([]);
 
   async function getJokesData() {
-    try {
-      const response = await axios.get('http://localhost:3500/jokes')
-        .then(() => {
-          setjokes(response)
-          console.log("response::::", response);
-        })
-    } catch (error) {
-      console.error(error);
-    }
+    const response = await axios.get("/api/jokes")
+      .then((response) => {
+        setjokes(response.data);
+      })
+      .catch((error) => {
+        console.error(
+          "Error in getting Jokes Api data::: line 15, App.jsx:::",
+          error
+        );
+      });
   }
 
   useEffect(() => {
-    getJokesData()
-  }, [])
+    getJokesData();
+  }, []);
   return (
-    <>
-      <div>
-        <h1>My first Fullstack App</h1>
-        <h4>Total Jokes: {jokes.length}</h4>
+    <div>
+      <h1>My first Fullstack App</h1>
+      <h4>Total Jokes: {jokes.length}</h4>
 
-        {
-          jokes.map((joke) =>
-            <div key={joke.id}>
-              <p>Joke number: {joke.id}</p>
-              <p>Joke text: {joke.text}</p>
-            </div>
-
-          )
-        }
-
-      </div>
-    </>
-  )
+      {jokes.map((joke) => (
+        <div key={joke.id}>
+          <p>Joke number: {joke.id}</p>
+          <p>Joke text: {joke.text}</p>
+        </div>
+      ))}
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -3,10 +3,10 @@ const app = express();
 const port = 3500;
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("AoA from backend!");
 });
 
-app.get("/jokes", (req, res) => {
+app.get("/api/jokes", (req, res) => {
   const jokes = [
     {
       id:1,
@@ -33,5 +33,5 @@ app.get("/jokes", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Server running on port ${port}`);
 });
