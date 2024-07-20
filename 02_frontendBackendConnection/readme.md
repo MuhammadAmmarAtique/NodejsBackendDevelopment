@@ -1,1 +1,1 @@
-Making frontend and backend and connecting it in javascript
+Making frontend (using react) and backend (using express) and connecting them using Proxies.
