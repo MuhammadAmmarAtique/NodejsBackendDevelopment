@@ -1,0 +1,1 @@
+Connecting frontend and backend using CORS.
