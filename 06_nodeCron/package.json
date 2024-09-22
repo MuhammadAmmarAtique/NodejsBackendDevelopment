@@ -1,0 +1,20 @@
+{
+  "name": "06_nodecron",
+  "version": "1.0.0",
+  "description": "How toschedule tasks in Node.js through using Node.js",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "author": "Muhammad Ammmar Atique",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
