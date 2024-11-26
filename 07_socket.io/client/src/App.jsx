@@ -8,8 +8,13 @@ const App = () => {
 
   useEffect(()=>{
     socket.on("connect",()=>{
-      console.log("Web socket connected");
+      console.log("Web socket i.e Client + Server connected");
     })
+
+    socket.on("welcome",(msg)=>{
+    console.log(msg);
+    })
+
   },[])
 
   return <div>App</div>;

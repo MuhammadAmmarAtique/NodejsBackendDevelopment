@@ -19,6 +19,18 @@ const io = new Server(server,{
 io.on("connection", (socket) => {
   console.log("User Connected!");
   console.log("Socket Id:", socket.id);
+  // #1 "emit" (sab ko msg jaiy ga)
+  // socket.emit("welcome","Welcome to the Server!")
+
+  // #2 "broadcast" (jo socket connect ho raha hai usko chor kar baqi sab ko msg jaaiy ga kaay koi naya aya hai!)
+  // socket.broadcast.emit("welcome",`${socket.id} joined the Server!`)
+
+  // #3
+  socket.on("disconnect",()=>{
+    "socket disconnected", socket.id
+  })
+
+  console.log("");
 });
 
 app.get("/", (req, res) => {
