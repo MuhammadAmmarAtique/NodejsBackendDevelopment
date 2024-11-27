@@ -7,13 +7,13 @@ import { Server } from "socket.io";
 const app = express();
 const server = createServer(app); // here we are converting express app to raw http server so it can work with Web Socket
 
-// WebSocket/Socket.IO Setup:- 
-const io = new Server(server,{
-  cors:{
+// WebSocket/Socket.IO Setup:-
+const io = new Server(server, {
+  cors: {
     origin: "http://localhost:5173",
     methods: ["GET", "POST"],
-    credentials: true
-  }
+    credentials: true,
+  },
 }); //by using http server creating web socket server (io) + cors configuration is done here like this!
 
 io.on("connection", (socket) => {
@@ -30,11 +30,10 @@ io.on("connection", (socket) => {
   //   "socket disconnected", socket.id
   // })
 
-  // #4 
-    socket.on("message",(msg)=>{
+  // #4
+  socket.on("message", (msg) => {
     console.log(msg);
-    
-  })
+  });
 
   console.log("");
 });

@@ -11,8 +11,8 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    socket.emit("message",message)
-    setMessage("")
+    socket.emit("message", message);
+    setMessage("");
   };
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const App = () => {
       }}
     >
       <Typography variant="h5" component="h1" gutterBottom>
-       Socket.emit (frontend) & Socket.on (backend)
+        Socket.emit (frontend) & Socket.on (backend)
       </Typography>
       <TextField
         label="Enter Something"
