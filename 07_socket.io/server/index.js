@@ -17,8 +17,8 @@ const io = new Server(server,{
 }); //by using http server creating web socket server (io) + cors configuration is done here like this!
 
 io.on("connection", (socket) => {
-  console.log("User Connected!");
-  console.log("Socket Id:", socket.id);
+  // console.log("User Connected!");
+  // console.log("Socket Id:", socket.id);
   // #1 "emit" (sab ko msg jaiy ga)
   // socket.emit("welcome","Welcome to the Server!")
 
@@ -26,8 +26,14 @@ io.on("connection", (socket) => {
   // socket.broadcast.emit("welcome",`${socket.id} joined the Server!`)
 
   // #3
-  socket.on("disconnect",()=>{
-    "socket disconnected", socket.id
+  // socket.on("disconnect",()=>{
+  //   "socket disconnected", socket.id
+  // })
+
+  // #4 
+    socket.on("message",(msg)=>{
+    console.log(msg);
+    
   })
 
   console.log("");
